@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Record Clone</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div id="head">
+
+     
+        <div id="main">
+            <div class="top">
+                <p>add a new record</p>
+            </div>
+            <div id="inputs">
+                <div class="inp">
+                    <label>Type</label><br>
+                    <select>
+                        <option value="" disabled selected>choose an option</option>
+                        <option value="A">A</option>
+                        <option value="AAAA">AAAA</option>
+                        <option value="CNAME">CNAME</option>
+                        <option value="MX">MX</option>
+                    </select>
+                </div>
+                <div class="inp">
+                    <label>Name</label><br>
+                    <input type="text" placeholder="@ or www">
+                </div>
+                <div class="inp">
+                    <label>Value</label><br>
+                    <input type="text" placeholder="xx.xx.xx.xx">
+                </div>
+                <div class="inp">
+                    <label>TTL</label><br>
+                    <input type="text" placeholder="1/2 Hour">
+                </div>
+            </div>
+        </div>
+
+       
+        <div id="clone-container"></div>
+
+        <div class="buttons">
+            <button id="btn1">Add New Record</button>
+            <button id="btn2">Save</button>
+        </div>
+    </div>
+
+</body>
+
+<script>
+    let btn = document.getElementById("btn1");
+
+    btn.addEventListener("click", () => {
+        let original = document.getElementById("main");
+        let clone = original.cloneNode(true);
+        document.getElementById("clone-container").appendChild(clone);
+    });
+</script>
+</html>
